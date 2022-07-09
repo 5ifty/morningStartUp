@@ -1,20 +1,22 @@
 from datetime import datetime
 import schedule
 import time
-from utils import main
+from utils.main import Batch
+
 
 
 def countDown():
-    localTime = str(datetime.now())
-    hour = str(datetime.strptime(localTime, "%d %m %y %H %M").hour)
-    minute = str(datetime.strptime(localTime, "%d %m %y %H %M").minute)
-    convertedTime = (f"{hour}:{minute}")
-    convertedTime == localTime
-    while True:
-        schedule.every().day.at("08:30").do(main())
-    while True:
+    localTime = datetime.now()
+    actionTime = localTime.strftime("%H:%M")
+    print(actionTime)
+    if actionTime == "08.30":
+        b = Batch()
+        schedule.every().day.at("08:30").do(b)
+        return
+    else:
         schedule.run_pending()
         time.sleep(1)
+        pass
 
 
 if __name__ == "__main__":
