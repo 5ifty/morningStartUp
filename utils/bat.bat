@@ -9,3 +9,5 @@ echo Sound Device Changed
 echo increasing system volume to "100"
 nircmd.exe setsysvolume 65535
 echo Volume is increased.
+
+exit /B
