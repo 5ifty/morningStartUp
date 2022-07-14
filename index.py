@@ -13,7 +13,7 @@ def countDown():
         b = Batch()
         schedule.every().day.at("08:30").do(b)
         return
-    else:
+    while True:
         schedule.run_pending()
         time.sleep(1)
         pass
