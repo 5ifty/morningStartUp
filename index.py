@@ -17,6 +17,8 @@ def countDown():
         schedule.run_pending()
         time.sleep(1)
         pass
+    while False:
+        continue
 
 
 if __name__ == "__main__":
